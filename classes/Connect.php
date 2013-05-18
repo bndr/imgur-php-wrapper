@@ -12,27 +12,27 @@ class Connect
 {
 
     /**
-     * @var
+     * @var array
      */
     protected $options;
     /**
-     * @var
+     * @var string
      */
     protected $api_key;
     /**
-     * @var
+     * @var string
      */
     protected $api_secret;
     /**
-     * @var
+     * @var string
      */
     protected $api_endpoint;
     /**
-     * @var
+     * @var string
      */
     protected $access_token;
     /**
-     * @var
+     * @var string
      */
     protected $refresh_token;
     /**
@@ -42,8 +42,8 @@ class Connect
 
     /**
      * Constructor
-     * @param $api_key
-     * @param $api_secret
+     * @param string $api_key
+     * @param string $api_secret
      */
     function __construct($api_key, $api_secret)
     {

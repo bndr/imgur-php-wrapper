@@ -12,7 +12,7 @@ class Upload
 {
 
     /**
-     * @var Connection $conn;
+     * @var Connect $conn;
      */
     protected $conn;
     /**

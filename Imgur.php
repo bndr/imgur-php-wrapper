@@ -139,10 +139,24 @@ class Imgur
         return $comment;
     }
 
+    /**
+     * Messages wrapper
+     * @return Message
+     */
     function message()
     {
         $msg = new Message($this->conn, $this->api_endpoint);
         return $msg;
+    }
+
+    /**
+     * Notifications wrapper
+     * @return mixed
+     */
+    function notification()
+    {
+        $notification = new Notification($this->conn, $this->api_endpoint);
+        return $notification;
     }
 
 }

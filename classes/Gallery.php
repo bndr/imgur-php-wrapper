@@ -18,7 +18,7 @@ class Gallery
     /**
      * Cosntructor
      * @param $connection
-     * @param $endpoint
+     * @param string $endpoint
      */
     function __construct($connection, $endpoint)
     {
@@ -174,7 +174,7 @@ class Gallery
 
     /**
      * Vote on Image | ALbum. Votes can be either up or down.
-     * @param $id
+     * @param string $id
      * @param string $type
      * @param string $vote
      * @return mixed
@@ -200,6 +200,7 @@ class Gallery
     }
 
     /**
+     * Get a comment to an image in gallery
      * @param $image_id
      * @param $type
      * @param $comment_id

@@ -91,7 +91,7 @@ class Message
 
     /**
      * Create a new mesage
-     * @param $options
+     * @param array $options
      * @return mixed
      */
     function create($options)

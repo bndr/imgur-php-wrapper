@@ -20,9 +20,9 @@ class Comment
     protected $id;
 
     /**
-     * @param $id
+     * @param string $id
      * @param $connection
-     * @param $endpoint
+     * @param string $endpoint
      */
     function __construct($id, $connection, $endpoint)
     {

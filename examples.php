@@ -93,3 +93,12 @@ $imgur->gallery()->vote($id, $type, $vote);
 $imgur->upload()->file("/path/to/file", $postfields); //Postfields look in http://api.imgur.com/endpoints/image#image-upload
 $imgur->upload()->string("base64encodedstring,$postfields");
 $imgur->upload()->url("http://urlofimage.com", $postfields);
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Notifications
+/*-----------------------------------------------------------------------------------*/
+
+$imgur->notification()->all();
+$imgur->notification()->single($id);
+$imgur->notification()->mark_as_read($id);

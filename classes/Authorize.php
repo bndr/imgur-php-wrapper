@@ -21,11 +21,11 @@ class Authorize
      */
     protected $conn;
     /**
-     * @var
+     * @var string
      */
     protected $access_token;
     /**
-     * @var
+     * @var string
      */
     protected $refresh_token;
     /**
