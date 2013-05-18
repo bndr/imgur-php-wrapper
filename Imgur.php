@@ -146,15 +146,3 @@ class Imgur
     }
 
 }
-
-if (isset($_GET['code'])) {
-    $imgur = new Imgur();
-    $imgur->authorize(false, $_GET['code']);
-
-    $acc = $imgur->account("tehlulz")->stats();
-    var_dumP($acc);
-
-} else {
-    $imgur = new Imgur();
-    $imgur->authorize();
-}
