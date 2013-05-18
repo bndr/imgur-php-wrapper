@@ -54,7 +54,6 @@ $imgur->image("image_id")->favorite();
 
 $imgur->comment("comment_id")->get();
 $imgur->comment("comment_id")->delete();
-$imgur->comment("comment_id")->favorite();
 $imgur->comment("comment_id")->report();
 $imgur->comment("comment_id")->vote($type); // "up" or "down";
 $imgur->comment("comment_id")->replies();
@@ -65,7 +64,7 @@ $imgur->comment("comment_id")->reply_create($options);
 /* Messages (User must be logged in);
 /*-----------------------------------------------------------------------------------*/
 
-$imgur->message()->meessages();
+$imgur->message()->messages();
 $imgur->message()->single($id);
 $imgur->message()->create($options);
 $imgur->message()->delete($id);

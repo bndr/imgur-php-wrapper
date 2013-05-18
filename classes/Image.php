@@ -82,6 +82,3 @@ class Image
         return $this->conn->request($uri, array('favorite' => true), "POST");
     }
 }
-
-
-?>

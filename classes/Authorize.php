@@ -17,7 +17,7 @@ class Authorize
      */
     protected $api_key, $api_secret;
     /**
-     * @var Connection
+     * @var Connect
      */
     protected $conn;
     /**
@@ -35,7 +35,7 @@ class Authorize
 
     /**
      * Constructor
-     * @param Connection $conn
+     * @param Connect $conn
      * @param string $key
      * @param string $secret
      */

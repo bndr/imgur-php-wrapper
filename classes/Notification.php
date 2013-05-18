@@ -55,7 +55,7 @@ class Notification
      */
     function mark_as_read($id)
     {
-        $uri = $this->endpoint . "/notification";
+        $uri = $this->endpoint . "/notification/" . $id;
 
         return $this->conn->request($uri, array("mark_as_read" => true), "PUT");
     }

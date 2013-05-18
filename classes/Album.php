@@ -90,10 +90,9 @@ class Album
 
     /**
      * Favorite an album
-     * @param $options
      * @return mixed
      */
-    function favorite($options)
+    function favorite()
     {
         $uri = $this->endpoint . "/album/" . $this->id . "/favorite";
 
@@ -112,6 +111,3 @@ class Album
         return $this->conn->request($uri, $ids_array, "POST");
     }
 }
-
-
-?>

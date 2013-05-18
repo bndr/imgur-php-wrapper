@@ -65,7 +65,7 @@ class Connect
     /**
      * Make request to Imgur API endpoint
      * @param $endpoint
-     * @param bool $options
+     * @param mixed $options
      * @param string $type
      * @return mixed
      * @throws Exception

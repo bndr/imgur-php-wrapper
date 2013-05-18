@@ -18,7 +18,7 @@ class Account
     /**
      * Constructor
      * @param string $username
-     * @param Connection $connection
+     * @param Connect $connection
      * @param string $endpoint
      */
     function __construct($username, $connection, $endpoint)
