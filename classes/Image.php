@@ -43,7 +43,6 @@ class Image
     {
 
         $uri = $this->endpoint . "/image/" . $this->id;
-
         return $this->conn->request($uri);
 
     }
@@ -56,7 +55,6 @@ class Image
     function update($options)
     {
         $uri = $this->endpoint . "/image/" . $this->id;
-
         return $this->conn->request($uri, $options, "PUT");
     }
 
@@ -67,7 +65,6 @@ class Image
     function delete()
     {
         $uri = $this->endpoint . "/image/" . $this->id;
-
         return $this->conn->request($uri, array("delete" => true), "DELETE");
     }
 
@@ -78,7 +75,6 @@ class Image
     function favorite()
     {
         $uri = $this->endpoint . "/image/" . $this->id . "/favorite";
-
         return $this->conn->request($uri, array('favorite' => true), "POST");
     }
 }

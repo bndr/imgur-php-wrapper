@@ -24,7 +24,6 @@ class Gallery
     {
         $this->conn = $connection;
         $this->endpoint = $endpoint;
-
     }
 
     /**
@@ -38,7 +37,6 @@ class Gallery
     function get($section, $sort, $page)
     {
         $uri = $this->endpoint . "/gallery/" . $section . "/" . $sort . "/" . $page;
-
         return $this->conn->request($uri);
     }
 
@@ -53,7 +51,6 @@ class Gallery
     function subreddit_gallery($subreddit, $sort, $page, $window = false)
     {
         $uri = $this->endpoint . "/gallery/r/" . $subreddit . "/" . $sort . ($window !== false ? "/" . $window : "") . "/" . $page;
-
         return $this->conn->request($uri);
     }
 
@@ -66,7 +63,6 @@ class Gallery
     function subreddit_image($subreddit, $id)
     {
         $uri = $this->endpoint . "/gallery/r/" . $subreddit . "/" . $id;
-
         return $this->conn->request($uri);
     }
 
@@ -78,7 +74,6 @@ class Gallery
     function search($str)
     {
         $uri = $this->endpoint . "/gallery/search?q=" . $str;
-
         return $this->conn->request($uri);
     }
 
@@ -90,7 +85,6 @@ class Gallery
     function random($page = 0)
     {
         $uri = $this->endpoint . "/gallery/random/random/" . $page;
-
         return $this->conn->request($uri);
     }
 
@@ -104,7 +98,6 @@ class Gallery
     function submit($id, $options, $type = "image")
     {
         $uri = $this->endpoint . "/gallery/" . $type . "/" . $id;
-
         return $this->conn->request($uri, $options, "POST");
     }
 
@@ -116,7 +109,6 @@ class Gallery
     function remove($id)
     {
         $uri = $this->endpoint . "/gallery/" . $id;
-
         return $this->conn->request($uri, array("remove" => true), "DELETE");
     }
 
@@ -128,7 +120,6 @@ class Gallery
     function album_info($id)
     {
         $uri = $this->endpoint . "/gallery/album/" . $id;
-
         return $this->conn->request($uri);
     }
 
@@ -140,7 +131,6 @@ class Gallery
     function image_info($id)
     {
         $uri = $this->endpoint . "/gallery/image/" . $id;
-
         return $this->conn->request($uri);
     }
 
@@ -153,7 +143,6 @@ class Gallery
     function report($id, $type = "image")
     {
         $uri = $this->endpoint . "/gallery/" . $type . "/" . $id . "/report";
-
         return $this->conn->request($uri, array("report" => true), "POST");
 
     }
@@ -167,7 +156,6 @@ class Gallery
     function votes($id, $type = "image")
     {
         $uri = $this->endpoint . "/gallery/" . $type . "/" . $id . "/votes";
-
         return $this->conn->request($uri);
     }
 
@@ -182,7 +170,6 @@ class Gallery
     function vote($id, $type = "image", $vote = "up")
     {
         $uri = $this->endpoint . "/gallery/" . $type . "/" . $id . "/vote/" . $vote;
-
         return $this->conn->request($uri, array("vote" => true), "POST");
     }
 
@@ -195,7 +182,6 @@ class Gallery
     function comments($id, $type)
     {
         $uri = $this->endpoint . "/gallery/" . $type . "/" . $id . "/comments";
-
         return $this->conn->request($uri);
     }
 
@@ -209,7 +195,6 @@ class Gallery
     function comment($image_id, $type, $comment_id)
     {
         $uri = $this->endpoint . "/gallery/" . $type . "/" . $image_id . "/comment/" . $comment_id;
-
         return $this->conn->request($uri);
     }
 }

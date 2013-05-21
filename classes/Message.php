@@ -25,7 +25,6 @@ class Message
     {
         $this->conn = $connection;
         $this->endpoint = $endpoint;
-
     }
 
 
@@ -36,7 +35,6 @@ class Message
     function messages()
     {
         $uri = $this->endpoint . "/messages/";
-
         return $this->conn->request($uri);
     }
 
@@ -48,7 +46,6 @@ class Message
     function single($id)
     {
         $uri = $this->endpoint . "/message/" . $id;
-
         return $this->conn->request($uri);
     }
 
@@ -60,7 +57,6 @@ class Message
     function messages_ids($page = 0)
     {
         $uri = $this->endpoint . "/messages/ids/" . $page;
-
         return $this->conn->request($uri);
     }
 
@@ -71,7 +67,6 @@ class Message
     function message_count()
     {
         $uri = $this->endpoint . "/messages/count";
-
         return $this->conn->request($uri);
 
     }
@@ -84,7 +79,6 @@ class Message
     function get_thread($id)
     {
         $uri = $this->endpoint . "/message/" . $id . "/thread";
-
         return $this->conn->request($uri);
 
     }
@@ -97,7 +91,6 @@ class Message
     function create($options)
     {
         $uri = $this->endpoint . "/message/";
-
         return $this->conn->request($uri, $options, "POST");
     }
 
@@ -109,7 +102,6 @@ class Message
     function delete($id)
     {
         $uri = $this->endpoint . "/message/" . $id;
-
         return $this->conn->request($uri, array("delete" => true), "DELETE");
     }
 
@@ -121,7 +113,6 @@ class Message
     function report_sender($username)
     {
         $uri = $this->endpoint . "/message/report/" . $username;
-
         return $this->conn->request($uri, array("report" => true), "POST");
     }
 
@@ -133,7 +124,6 @@ class Message
     function block_sender($username)
     {
         $uri = $this->endpoint . "/message/block/" . $username;
-
         return $this->conn->request($uri, array("block" => true), "POST");
     }
 

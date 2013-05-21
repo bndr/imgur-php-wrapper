@@ -38,7 +38,6 @@ class Album
     function get()
     {
         $uri = $this->endpoint . "/album/" . $this->id;
-
         return $this->conn->request($uri);
     }
 
@@ -49,7 +48,6 @@ class Album
     function images()
     {
         $uri = $this->endpoint . "/album/" . $this->id . "/images";
-
         return $this->conn->request($uri);
     }
 
@@ -61,7 +59,6 @@ class Album
     function create($options)
     {
         $uri = $this->endpoint . "/album/" . $this->id;
-
         return $this->conn->request($uri, $options, "POST");
     }
 
@@ -72,7 +69,6 @@ class Album
     function delete()
     {
         $uri = $this->endpoint . "/album/" . $this->id;
-
         return $this->conn->request($uri, array("delete" => true), "DELETE");
     }
 
@@ -84,7 +80,6 @@ class Album
     function update($options)
     {
         $uri = $this->endpoint . "/album/" . $this->id;
-
         return $this->conn->request($uri, $options, "PUT");
     }
 
@@ -95,7 +90,6 @@ class Album
     function favorite()
     {
         $uri = $this->endpoint . "/album/" . $this->id . "/favorite";
-
         return $this->conn->request($uri, array("favorite" => true), "POST");
     }
 
@@ -107,7 +101,6 @@ class Album
     function add_images($ids_array)
     {
         $uri = $this->endpoint . "/album/" . $this->id;
-
         return $this->conn->request($uri, $ids_array, "POST");
     }
 }

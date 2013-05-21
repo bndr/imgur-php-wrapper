@@ -38,7 +38,6 @@ class Comment
     function get()
     {
         $uri = $this->endpoint . "/comment/" . $this->id;
-
         return $this->conn->request($uri);
     }
 
@@ -50,7 +49,6 @@ class Comment
     function create($options)
     {
         $uri = $this->endpoint . "/comment/" . $this->id;
-
         return $this->conn->request($uri, $options, "POST");
 
     }
@@ -63,7 +61,6 @@ class Comment
     {
 
         $uri = $this->endpoint . "/comment/" . $this->id;
-
         return $this->conn->request($uri, array("delete" => true), "DELETE");
 
     }
@@ -75,7 +72,6 @@ class Comment
     function replies()
     {
         $uri = $this->endpoint . "/comment/" . $this->id . "/replies";
-
         return $this->conn->request($uri);
 
     }
@@ -88,7 +84,6 @@ class Comment
     function vote($type)
     {
         $uri = $this->endpoint . "/comment/" . $this->id . "/vote/" . $type;
-
         return $this->conn->request($uri, array('vote' => true), "POST");
     }
 
@@ -99,7 +94,6 @@ class Comment
     function report()
     {
         $uri = $this->endpoint . "/comment/" . $this->id . "/report/";
-
         return $this->conn->request($uri, array('report' => true), "POST");
     }
 
@@ -111,7 +105,6 @@ class Comment
     function reply_create($options)
     {
         $uri = $this->endpoint . "/comment/" . $this->id;
-
         return $this->conn->request($uri, $options, "POST");
     }
 

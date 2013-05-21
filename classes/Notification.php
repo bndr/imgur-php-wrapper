@@ -32,7 +32,6 @@ class Notification
     function all($new)
     {
         $uri = $this->endpoint . "/notification?new=" . ($new == true) ? "true" : "false";
-
         return $this->conn->request($uri);
     }
 
@@ -44,7 +43,6 @@ class Notification
     function single($id)
     {
         $uri = $this->endpoint . "/notification/" . $id;
-
         return $this->conn->request($uri);
     }
 
@@ -56,7 +54,6 @@ class Notification
     function mark_as_read($id)
     {
         $uri = $this->endpoint . "/notification/" . $id;
-
         return $this->conn->request($uri, array("mark_as_read" => true), "PUT");
     }
 

@@ -35,7 +35,6 @@ class Account
     function basic()
     {
         $uri = $this->endpoint . "/account/" . $this->username;
-        var_dump($uri);
         return $this->conn->request($uri);
     }
 
@@ -47,7 +46,6 @@ class Account
     function create($options)
     {
         $uri = $this->endpoint . "/account/" . $this->username;
-
         return $this->conn->request($uri, $options, "POST");
     }
 
@@ -57,7 +55,6 @@ class Account
     function delete()
     {
         $uri = $this->endpoint . "/account/" . $this->username;
-
         return $this->conn->request($uri, array("delete" => true), "DELETE");
     }
 
@@ -68,7 +65,6 @@ class Account
     function favorites($type)
     {
         $uri = $this->endpoint . "/account/" . $this->username . ($type == 'gallery' ? "/gallery_favorites" : "/favorites");
-
         return $this->conn->request($uri);
     }
 
@@ -79,7 +75,6 @@ class Account
     function submissions($page = 0)
     {
         $uri = $this->endpoint . "/account/" . $this->username . "/submissions/" . $page;
-
         return $this->conn->request($uri);
     }
 
@@ -90,7 +85,6 @@ class Account
     function settings($options = FALSE)
     {
         $uri = $this->endpoint . "/account/" . $this->username . "/settings";
-
         return $this->conn->request($uri, $options, ($options == FALSE) ? "GET" : "POST");
     }
 
@@ -100,7 +94,6 @@ class Account
     function stats()
     {
         $uri = $this->endpoint . "/account/" . $this->username . "/stats";
-
         return $this->conn->request($uri);
     }
 
@@ -111,7 +104,6 @@ class Account
     function albums($page = 0)
     {
         $uri = $this->endpoint . "/account/" . $this->username . "/albums/" . $page;
-
         return $this->conn->request($uri);
     }
 
@@ -122,7 +114,6 @@ class Account
     function images($page = 0)
     {
         $uri = $this->endpoint . "/account/" . $this->username . "/images/" . $page;
-
         return $this->conn->request($uri);
     }
 
@@ -133,7 +124,6 @@ class Account
     function notifications($new)
     {
         $uri = $this->endpoint . "/account/" . $this->username . "/notifications?new=" . ($new == true) ? "true" : "false";
-
         return $this->conn->request($uri);
     }
 
@@ -144,7 +134,6 @@ class Account
     function messages($new)
     {
         $uri = $this->endpoint . "/account/" . $this->username . "/notifications/messages?new=" . ($new == true) ? "true" : "false";
-
         return $this->conn->request($uri);
     }
 
@@ -155,7 +144,6 @@ class Account
     function send_message($options)
     {
         $uri = $this->endpoint . "/account/" . $this->username . "/message";
-
         return $this->conn->request($uri, $options, "POST");
     }
 
@@ -166,9 +154,7 @@ class Account
     function replies($new)
     {
         $uri = $this->endpoint . "/account/" . $this->username . "/notifications/replies?new=" . ($new == true) ? "true" : "false";
-
         return $this->conn->request($uri);
-
     }
 
 

@@ -64,7 +64,6 @@ class Authorize
      */
     function getAccessToken($code)
     {
-
         $uri = $this->oauth . "/token/";
         $options = array(
             'client_id' => $this->api_key,
@@ -72,7 +71,7 @@ class Authorize
             'grant_type' => 'authorization_code',
             'code' => $code
         );
-        $response = $this->conn->request($uri, $options, "POST");
+        $response = ($code) ? $this->conn->request($uri, $options, "POST") : null;
 
         return $response;
     }
@@ -93,7 +92,7 @@ class Authorize
             'refresh_token' => $refresh_token
         );
 
-        $response = $this->conn->request($uri, $options, "POST");
+        $response = ($refresh_token) ? $this->conn->request($uri, $options, "POST") : null;
 
         return $response;
     }
@@ -106,7 +105,7 @@ class Authorize
         $uri = $this->oauth . "/authorize/" . "?client_id=" . $this->api_key . "&response_type=code&state=initializing";
 
         echo "<!doctype html><html><head><meta charset='utf-8'></head>
-            <body><a href='{$uri}' target='_blank'>YOU NEED TO AUTHORIZE THIS APPLICATION TO ACCESS YOUR DATA</a><br>
+            <body><a href='{$uri}' target='_blank'>Click this link to authorize the application to access your Imgur data</a><br>
                </body></html>";
 
         exit;

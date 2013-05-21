@@ -18,11 +18,11 @@ class Imgur
     /**
      * @var bool|string
      */
-    protected $api_key = "df2a8a594ed512f";
+    protected $api_key = "";
     /**
      * @var string
      */
-    protected $api_secret = "a6ee7218a80b7e41d434c50b6726dc6bbd83329c";
+    protected $api_secret = "";
     /**
      * @var string
      */
@@ -38,13 +38,16 @@ class Imgur
 
     /**
      * Imgur Class constructor.
-     * @param $api_key
-     * @param $api_secret
+     * @param string $api_key
+     * @param string $api_secret
+     * @throws
      */
-    function __construct($api_key = false, $api_secret = false)
+    function __construct($api_key, $api_secret)
     {
-        if ($api_key) $this->api_key = $api_key;
-        if ($api_secret) $this->api_key = $api_secret;
+        if (!$api_key || !$api_secret) throw Exception("Please provided API key data");
+
+        $this->api_key = $api_key;
+        $this->api_secret = $api_secret;
         $this->conn = new Connect($this->api_key, $this->api_secret);
     }
 
@@ -58,17 +61,9 @@ class Imgur
      */
     function authorize($refresh_token = FALSE, $auth_code = FALSE)
     {
-        $tokens = null;
         $auth = new Authorize($this->conn, $this->api_key, $this->api_secret);
-        if ($auth_code) { // Authorization code was passed, exchanging it for access_token
-            $tokens = $auth->getAccessToken($auth_code);
-            $this->conn->setAccessData($tokens['access_token'], $tokens['refresh_token']);
-        } else if ($refresh_token) { // Already have refresh_token, exchanging it for access_token
-            $tokens = $auth->refreshAccessToken($refresh_token);
-            $this->conn->setAccessData($tokens['access_token'], $tokens['refresh_token']);
-        } else {
-            $auth->getAuthorizationCode(); // Show user the authentication form
-        }
+        $tokens = ($refresh_token) ? $auth->refreshAccessToken($refresh_token) : $auth->getAccessToken($auth_code);
+        (!$tokens) ? $auth->getAuthorizationCode() : $this->conn->setAccessData($tokens['access_token'], $tokens['refresh_token']);
 
         return $tokens;
 
@@ -91,7 +86,6 @@ class Imgur
      */
     function image($id = null)
     {
-
         $image = new Image($id, $this->conn, $this->api_endpoint);
         return $image;
     }
