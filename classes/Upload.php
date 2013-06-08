@@ -41,7 +41,7 @@ class Upload
     {
         $uri = $this->endpoint . "/upload";
         $options['image'] = $filep;
-        $this->conn->request($uri, $options, "POST");
+        return $this->conn->request($uri, $options, "POST");
     }
 
     /**
@@ -53,7 +53,7 @@ class Upload
     {
         $uri = $this->endpoint . "/upload";
         $options['image'] = $base64;
-        $this->conn->request($uri, $options, "POST");
+        return $this->conn->request($uri, $options, "POST");
     }
 
     /**
@@ -65,6 +65,6 @@ class Upload
     {
         $uri = $this->endpoint . "/upload";
         $options['image'] = $url;
-        $this->conn->request($uri, $options, "POST");
+        return $this->conn->request($uri, $options, "POST");
     }
 }
