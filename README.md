@@ -1,6 +1,8 @@
 Imgur API PHP Wrapper 0.1
 =========================
-Easy to user php wrapper for imgur API. You can see example usage in examples.php
+Easy to use php wrapper for imgur API. You can see example usages in examples.php
+
+Feel free to fork and contribute to the project.
 
 Notes
 =====
