@@ -40,7 +40,7 @@ class Upload
     function file($filep, $options = array())
     {
         $uri = $this->endpoint . "/upload";
-        $options['image'] = $filep;
+        $options['image'] = '@'.$filep;
         return $this->conn->request($uri, $options, "POST");
     }
 
