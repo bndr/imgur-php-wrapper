@@ -88,7 +88,7 @@ class Authorize
         $options = array(
             'client_id' => $this->api_key,
             'client_secret' => $this->api_secret,
-            'grant_type' => 'authorization_code',
+            'grant_type' => 'refresh_token',
             'refresh_token' => $refresh_token
         );
 
