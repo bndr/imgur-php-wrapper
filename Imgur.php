@@ -8,7 +8,7 @@
  */
 
 spl_autoload_register(function ($cname) {
-    require_once(__DIR__."/classes/" . $cname . ".php");
+    require_once("classes/" . $cname . ".php");
     throw new Exception("Class " . $cname . " failed to load. Please verify that you uploaded the files correctly.");
 });
 
