@@ -40,7 +40,7 @@ class Upload
     function file($filep, $options = array())
     {
         $uri = $this->endpoint . "/upload";
-        $options['image'] = '@'.$filep;
+        $options['image'] = (function_exists('curl_file_create')) ? curl_file_create($filep) : '@'.$filep;
         return $this->conn->request($uri, $options, "POST");
     }
 
