@@ -10,8 +10,8 @@
 //Include the main file
 include("Imgur.php");
 //Set up your api key and secret
-$api_key = "";
-$api_secret = "";
+$api_key = "f081b9d11dda8dc";
+$api_secret = "174e0d5dff99108fa7313c74577eae63812b67eb";
 
 $imgur = new Imgur($api_key, $api_secret);
 
