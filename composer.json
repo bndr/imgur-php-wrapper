@@ -1,0 +1,16 @@
+{
+  "name": "bndr/imgur-php-wrapper",
+  "description": "Imgur API php client for easy usage",
+  "authors": [
+    {
+      "name": "Vadim Kravcenko",
+      "email": "vadim.kravcenko@gmail.com"
+    }
+  ],
+
+  "autoload": {
+      "psr-4": {
+        "": "classes/"
+      }
+  }
+}

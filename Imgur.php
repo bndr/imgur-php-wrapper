@@ -7,10 +7,7 @@
  * @license http://creativecommons.org/licenses/by-sa/3.0/legalcode
  */
 
-spl_autoload_register(function ($cname) {
-    require_once("classes/" . $cname . ".php");
-    throw new Exception("Class " . $cname . " failed to load. Please verify that you uploaded the files correctly.");
-});
+require 'vendor/autoload.php';
 
 class Imgur
 {
