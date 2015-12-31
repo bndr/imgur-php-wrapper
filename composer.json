@@ -2,7 +2,7 @@
   "name": "bndr/imgur-php-wrapper",
   "description": "Imgur API php client for easy usage",
   "version": "1.0.0",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
   "authors": [
     {
       "name": "Vadim Kravcenko",
